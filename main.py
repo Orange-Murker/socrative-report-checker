@@ -70,9 +70,10 @@ for team, names in team_members.items():
     for name in names:
         feedback = gave_feedback[name]
         colour = reset
-        if len(feedback) == 4:
+        expected_feedback = len(team_members) - 1
+        if len(feedback) == expected_feedback:
             colour = green
-        elif len(feedback) > 4:
+        elif len(feedback) > expected_feedback:
             colour = yellow
         else:
             colour = red
